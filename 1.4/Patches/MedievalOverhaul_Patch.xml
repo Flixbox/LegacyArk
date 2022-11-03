@@ -22,6 +22,7 @@
         </li>
 
         <!-- Add custom hides for LonghornBull / AnkoleWatusiBull (They have horns) -->
+        <!-- TODO These hide processes currently don't drop horns. This might be a bug in MO. (◣_◢) is on it. -->
         <li Class="PatchOperationAdd">
           <xpath>Defs</xpath>
           <value>
