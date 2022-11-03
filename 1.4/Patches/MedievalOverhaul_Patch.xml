@@ -4,9 +4,11 @@
     <mods>
       <li>Medieval Overhaul (unofficial)</li>
     </mods>
+
     <match Class="PatchOperationSequence">
       <success>Always</success>
       <operations>
+
         <!-- Add hides for Medieval Overhaul tanning rack (except for ones with horns - LonghornBull / AnkoleWatusiBull) -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/PawnKindDef[defName="AngusCow" or defName="BoomooCow" or defName="BrahmanCow" or defName="BravaCow" or defName="BrownSwissCow" or defName="HarianaCow" or defName="HerefordCow" or defName="HighlandCow" or defName="HolsteinFriesianCow" or defName="AngusCow" or defName="JerseyCow" or defName="LimousinCow" or defName="ZebuCow"]/lifeStages/li[3]</xpath>
@@ -19,7 +21,76 @@
           </value>
         </li>
 
-        <!-- TODO: Add custom hides for LonghornBull / AnkoleWatusiBull (They have horns) -->
+        <!-- Add custom hides for LonghornBull / AnkoleWatusiBull (They have horns) -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="DankPyon_HideBaseHuge">
+              <defName>LA_Hide_Longhorn</defName>
+              <label>huge longhorn hide</label>
+              <graphicData>
+                <color>(90,28,4)</color>
+              </graphicData>
+              <statBases>
+                <MarketValue>108</MarketValue>
+              </statBases>
+              <butcherProducts Inherit="False">
+                <Leather_Plain>60</Leather_Plain>
+                <LonghornHorn>1</LonghornHorn>
+              </butcherProducts>
+              <stuffProps>
+                <color>(90,28,4)</color>
+              </stuffProps>
+            </ThingDef>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="DankPyon_HideBaseHuge">
+              <defName>LA_Hide_AnkoleWatusi</defName>
+              <label>huge watusi hide</label>
+              <graphicData>
+                <color>(129,50,15)</color>
+              </graphicData>
+              <statBases>
+                <MarketValue>108</MarketValue>
+              </statBases>
+              <butcherProducts Inherit="False">
+                <Leather_Plain>60</Leather_Plain>
+                <AnkoleWatusiHorn>1</AnkoleWatusiHorn>
+              </butcherProducts>
+              <stuffProps>
+                <color>(129,50,15)</color>
+              </stuffProps>
+            </ThingDef>
+          </value>
+        </li>
+
+        <!-- Replace drops of LonghornBull / AnkoleWatusiBull with the new hides -->
+
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/PawnKindDef[defName="LonghornCow"]/lifeStages/li[3]/butcherBodyPart</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>LA_Hide_Longhorn</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/PawnKindDef[defName="AnkoleWatusiCow"]/lifeStages/li[3]/butcherBodyPart</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>LA_Hide_AnkoleWatusi</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
 
       </operations>
     </match>
