@@ -9,7 +9,8 @@
       <success>Always</success>
       <operations>
 
-        <!-- Add hides for Medieval Overhaul tanning rack (except for ones with horns - LonghornBull / AnkoleWatusiBull) -->
+        <!-- Add cow hides for Medieval Overhaul tanning rack (except for ones with horns - LonghornBull / AnkoleWatusiBull) -->
+
         <li Class="PatchOperationAdd">
           <xpath>Defs/PawnKindDef[defName="AngusCow" or defName="BoomooCow" or defName="BrahmanCow" or defName="BravaCow" or defName="BrownSwissCow" or defName="HarianaCow" or defName="HerefordCow" or defName="HighlandCow" or defName="HolsteinFriesianCow" or defName="AngusCow" or defName="JerseyCow" or defName="LimousinCow" or defName="ZebuCow"]/lifeStages/li[3]</xpath>
           <value>
@@ -23,6 +24,7 @@
 
         <!-- Add custom hides for LonghornBull / AnkoleWatusiBull (They have horns) -->
         <!-- TODO These hide processes currently don't drop horns. This might be a bug in MO. (◣_◢) is on it. -->
+
         <li Class="PatchOperationAdd">
           <xpath>Defs</xpath>
           <value>
@@ -88,6 +90,85 @@
             <butcherBodyPart>
               <bodyPartGroup>HeadAttackTool</bodyPartGroup>
               <thing>LA_Hide_AnkoleWatusi</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <!-- Add critter hides for Medieval Overhaul tanning rack -->
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+            <ThingDef ParentName="DankPyon_HideBaseSmall">
+              <defName>LA_Hide_CactusChitin</defName>
+              <label>cactus chitin hide</label>
+              <graphicData>
+                <color>(0,153,51)</color>
+              </graphicData>
+              <statBases>
+                <MarketValue>30</MarketValue>
+              </statBases>
+              <butcherProducts Inherit="False">
+                <CactusChitin>15</CactusChitin>
+              </butcherProducts>
+              <stuffProps>
+                <color>(0,153,51)</color>
+              </stuffProps>
+            </ThingDef>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="Badger" or defName="Gerbil" or defName="IndianGiantSquirrel" or defName="Muskrat" or defName="Nutria"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>DankPyon_Hide_SoftPeltTiny</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="BrushTurkey"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>DankPyon_Hide_BirdMedium</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="LeopardTortoise" or defName="RedFootedTortoise" or defName="Copperhead" or defName="CoralSnake" or defName="Cottonmouth" or defName="GreenSnake" or defName="MudSnake" or defName="RedRattler" or defName="ScarletKingSnake" or defName="TimberRattler" or defName="YellowViper"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>DankPyon_Hide_ScaleTiny</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="CactusMantis"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>LA_Hide_CactusChitin</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="WaterDeer"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>DankPyon_Hide_HideHuge</thing>
               <allowFemale>true</allowFemale>
             </butcherBodyPart>
           </value>
