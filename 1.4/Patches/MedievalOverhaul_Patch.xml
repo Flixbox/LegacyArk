@@ -177,7 +177,7 @@
         <!-- Add pig hides for Medieval Overhaul tanning rack -->
 
         <li Class="PatchOperationAdd">
-          <xpath>Defs/PawnKindDef[@ParentName="ArkPigBase"]/lifeStages/li[3]</xpath>
+          <xpath>Defs/PawnKindDef[@ParentName="ArkPigPawnBase"]/lifeStages/li[3]</xpath>
           <value>
             <butcherBodyPart>
               <bodyPartGroup>HeadAttackTool</bodyPartGroup>
@@ -191,7 +191,7 @@
         <!-- TODO These hide processes currently don't drop horns. This might be a bug in MO. (◣_◢) is on it. -->
 
         <li Class="PatchOperationAdd">
-          <xpath>Defs/PawnKindDef[@ParentName="ArkSheepBase"]/lifeStages/li[3]</xpath>
+          <xpath>Defs/PawnKindDef[@ParentName="ArkSheepPawnBase"]/lifeStages/li[3]</xpath>
           <value>
             <butcherBodyPart>
               <bodyPartGroup>HeadAttackTool</bodyPartGroup>
