@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Overhaul (unofficial)</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <!-- Add hides for Medieval Overhaul tanning rack (except for ones with horns - LonghornBull / AnkoleWatusiBull) -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName="AngusCow" or defName="BoomooCow" or defName="BrahmanCow" or defName="BravaCow" or defName="BrownSwissCow" or defName="HarianaCow" or defName="HerefordCow" or defName="HighlandCow" or defName="HolsteinFriesianCow" or defName="AngusCow" or defName="JerseyCow" or defName="LimousinCow" or defName="ZebuCow"]/lifeStages/li[3]</xpath>
+          <value>
+            <butcherBodyPart>
+              <bodyPartGroup>HeadAttackTool</bodyPartGroup>
+              <thing>DankPyon_Hide_HideHuge</thing>
+              <allowFemale>true</allowFemale>
+            </butcherBodyPart>
+          </value>
+        </li>
+
+        <!-- TODO: Add custom hides for LonghornBull / AnkoleWatusiBull (They have horns) -->
+
+      </operations>
+    </match>
+  </Operation>
+</Patch>
